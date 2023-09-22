@@ -120,7 +120,7 @@ function prova(){
 	alert ("EmailSecret:" +emailSecret);
 	*/
 	alert ("${{ secrets.EMAIL }}");
-	const secret = process.env.MY_SECRET;
+	const secret = process.env.EMAIL;
 	alert (secret);
 }
 
