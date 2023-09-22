@@ -121,7 +121,7 @@ function prova(){
 const options = {
   method: "POST",
   headers: {
-    "Authorization": 'Bearer 224786620576-kmagpshk2lsabug88cj89t7flefuir5g.apps.googleusercontent.com',
+    "Authorization": "Bearer 224786620576-kmagpshk2lsabug88cj89t7flefuir5g.apps.googleusercontent.com",
   },
   body: JSON.stringify(email),
 };
@@ -161,7 +161,7 @@ fetch("https://www.googleapis.com/gmail/v1/users/me/messages/send", options)
 		const request = fetch("https://www.googleapis.com/gmail/v1/users/me/messages/send", {
 		method: "POST",
 		headers: {
-		"Authorization": Bearer {token},
+		"Authorization": "Bearer {token}",
 		"Content-Type": "application/json"
 		},
 		body: JSON.stringify(params)
