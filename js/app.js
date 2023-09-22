@@ -120,6 +120,8 @@ function prova(){
 	alert ("EmailSecret:" +emailSecret);
 	*/
 	alert ("${{ secrets.EMAIL }}");
+	const secret = process.env.MY_SECRET;
+	alert (secret);
 }
 
 	// Funzione per inviare il form per email
