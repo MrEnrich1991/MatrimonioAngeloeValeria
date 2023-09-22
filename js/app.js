@@ -122,9 +122,12 @@ const play = (btn) => {
 		const fetch = window.fetch;
 		
 		// Importa il modulo `secrets`
-		//const secrets = require('secrets');
+		const secrets = require('secrets');
 		// Recupera la chiave API
-		//const emailSecret = secrets.get('EMAIL');
+		const emailSecret = secrets.get('EMAIL');
+		
+		alert ("EmailSecret:" +emailSecret);
+		alert ("${{ secrets.EMAIL }}");
 
 		// Imposta i parametri dell'API
 		const params = {
