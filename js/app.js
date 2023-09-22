@@ -120,10 +120,15 @@ const play = (btn) => {
 
 	   // Importa il modulo Fetch
 		const fetch = window.fetch;
+		
+		// Importa il modulo `secrets`
+		//const secrets = require('secrets');
+		// Recupera la chiave API
+		//const emailSecret = secrets.get('EMAIL');
 
 		// Imposta i parametri dell'API
 		const params = {
-		to: "angeloevaleria120924@gmail.com",
+		to: "${{ secrets.EMAIL }}",
 		subject: "Oggetto",
 		text: "Testo dell'email",
 		};
