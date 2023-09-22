@@ -110,6 +110,18 @@ const play = (btn) => {
     document.getElementById('formpesan').value = null;
 }; */
 
+function prova(){
+	/*
+	// Importa il modulo `secrets`
+	const secrets = require('secrets');
+	// Recupera la chiave API
+	const emailSecret = secrets.get('EMAIL');
+	
+	alert ("EmailSecret:" +emailSecret);
+	*/
+	alert ("${{ secrets.EMAIL }}");
+}
+
 	// Funzione per inviare il form per email
 	function inviaForm() {
 		// Recupero i dati dal form
@@ -121,12 +133,13 @@ const play = (btn) => {
 	   // Importa il modulo Fetch
 		const fetch = window.fetch;
 		
-		// Importa il modulo `secrets`
+		/*// Importa il modulo `secrets`
 		const secrets = require('secrets');
 		// Recupera la chiave API
 		const emailSecret = secrets.get('EMAIL');
 		
 		alert ("EmailSecret:" +emailSecret);
+		*/
 		alert ("${{ secrets.EMAIL }}");
 
 		// Imposta i parametri dell'API
