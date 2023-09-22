@@ -111,17 +111,32 @@ const play = (btn) => {
 }; */
 
 function prova(){
-	/*
-	// Importa il modulo `secrets`
-	const secrets = require('secrets');
-	// Recupera la chiave API
-	const emailSecret = secrets.get('EMAIL');
-	
-	alert ("EmailSecret:" +emailSecret);
-	*/
-	alert ("${{ secrets.EMAIL }}");
-	const secret = process.env.EMAIL;
-	alert (secret);
+	const email = {
+  from: "angeloevaleria120924@gmail.com",
+  to: "angeloevaleria120924@gmail.com",
+  subject: "Test email",
+  body: "This is a test email.",
+};
+
+const options = {
+  method: "POST",
+  headers: {
+    "Authorization": 'Bearer 224786620576-kmagpshk2lsabug88cj89t7flefuir5g.apps.googleusercontent.com',
+  },
+  body: JSON.stringify(email),
+};
+
+fetch("https://www.googleapis.com/gmail/v1/users/me/messages/send", options)
+  .then((response) => {
+    if (response.ok) {
+      console.log("Email sent successfully.");
+    } else {
+      console.log("Error sending email.");
+    }
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 }
 
 	// Funzione per inviare il form per email
@@ -134,28 +149,19 @@ function prova(){
 
 	   // Importa il modulo Fetch
 		const fetch = window.fetch;
-		
-		/*// Importa il modulo `secrets`
-		const secrets = require('secrets');
-		// Recupera la chiave API
-		const emailSecret = secrets.get('EMAIL');
-		
-		alert ("EmailSecret:" +emailSecret);
-		*/
-		alert ("${{ secrets.EMAIL }}");
 
 		// Imposta i parametri dell'API
 		const params = {
-		to: "${{ secrets.EMAIL }}",
+		to: "angeloevaleria120924@gmail.com",
 		subject: "Oggetto",
 		text: "Testo dell'email",
-		};
+		};	
 
 		// Invia la richiesta
 		const request = fetch("https://www.googleapis.com/gmail/v1/users/me/messages/send", {
 		method: "POST",
 		headers: {
-		"Authorization": "Bearer YOUR_ACCESS_TOKEN",
+		"Authorization": Bearer {token},
 		"Content-Type": "application/json"
 		},
 		body: JSON.stringify(params)
